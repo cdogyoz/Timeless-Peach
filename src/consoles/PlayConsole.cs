@@ -1,11 +1,15 @@
-﻿using Microsoft.Xna.Framework;
-
+﻿using System;
 using SadConsole;
-using System;
 using Console = SadConsole.Console;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Timeless_Peach.src.consoles;
+using Timeless_Peach.src.constructs;
 
 namespace Timeless_Peach.src.consoles {
     class PlayConsole : ContainerConsole {
+
+        public SadConsole.Entities.Entity player;
 
         public PlayConsole() {
 
@@ -15,14 +19,17 @@ namespace Timeless_Peach.src.consoles {
             var logConsole = new Console(80, 5);              //Message Log console
             var infoConsole = new Console(15, 20);
 
+            player = new PlayerConstruct();
             logConsole.Position = new Point(0, 20);
             infoConsole.Position = new Point(65, 0);
             infoConsole.FillWithRandomGarbage();
+            logConsole.Fill(Color.Blue, Color.White, (int) ' ', null);
 
 
-            this.Children.Add(worldConsole);
-            this.Children.Add(logConsole);
-            this.Children.Add(infoConsole);
+            Children.Add(worldConsole);
+            Children.Add(logConsole);
+            Children.Add(infoConsole);
+            Children.Add(player);
 
         }
 

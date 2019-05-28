@@ -27,15 +27,16 @@ namespace Timeless_Peach {
 
         //update function
         private static void Tick(GameTime t) {
+            
             //North movement
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad8)
                 || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up))
-                player.Position += new Point(0, -1);
+                currentConsole.player.Position += new Point(0, -1);
 
             //South movement
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2)
                 || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down))
-                player.Position += new Point(0, 1);
+                
 
             //West movement
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad4)
@@ -71,13 +72,8 @@ namespace Timeless_Peach {
             SadConsole.Global.CurrentScreen = rootConsole;
 
             rootConsole.Children.Add(new PlayConsole());
-            CreatePlayer();
+            
         }
 
-        private static void CreatePlayer() {
-            player = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'@');
-            player.Position = new Point(10, 10);
-            SadConsole.Global.CurrentScreen.Children.Add(player);
-        }
     }
 }

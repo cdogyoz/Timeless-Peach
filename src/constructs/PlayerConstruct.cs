@@ -1,10 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+
+using SadConsole;
+using System;
+using SadConsole.Entities;
 
 namespace Timeless_Peach.src.constructs {
-    class PlayerConstruct {
+    class PlayerConstruct : Entity  {
+
+        public PlayerConstruct() : base(Color.Green, Color.Black, (int)'@') {
+            Position = new Point(10, 10);
+        }
+
+        
     }
 }
