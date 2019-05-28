@@ -10,6 +10,7 @@ namespace Timeless_Peach {
 
         public const int Width = 80;
         public const int Height = 25;
+        public static SadConsole.Entities.Entity player;
 
         static void Main(string[] args) {
             // Setup the engine and create the main window.
@@ -26,7 +27,42 @@ namespace Timeless_Peach {
 
         //update function
         private static void Tick(GameTime t) {
-            
+            //North movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad8)
+                || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up))
+                player.Position += new Point(0, -1);
+
+            //South movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2)
+                || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down))
+                player.Position += new Point(0, 1);
+
+            //West movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad4)
+                || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Left))
+                player.Position += new Point(-1, 0);
+
+            //East movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad6)
+                || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Right))
+                player.Position += new Point(1, 0);
+
+            //North-west movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad7))
+                player.Position += new Point(-1, -1);
+
+            //North-east movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad9))
+                player.Position += new Point(1, -1);
+
+            //South-west movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad1))
+                player.Position += new Point(-1, 1);
+
+            //South-east movement
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad3))
+                player.Position += new Point(1, 1);
+
         }
 
         private static void Init() {
@@ -39,7 +75,7 @@ namespace Timeless_Peach {
         }
 
         private static void CreatePlayer() {
-            SadConsole.Entities.Entity player = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'@');
+            player = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'@');
             player.Position = new Point(10, 10);
             SadConsole.Global.CurrentScreen.Children.Add(player);
         }
