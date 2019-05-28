@@ -9,6 +9,7 @@ namespace Timeless_Peach{
 
         public const int Width = 80;
         public const int Height = 25;
+        public const int virgins = 34;
 
         static void Main(string[] args){
             // Setup the engine and create the main window.
