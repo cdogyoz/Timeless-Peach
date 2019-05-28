@@ -3,32 +3,39 @@ using SadConsole;
 using Console = SadConsole.Console;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Timeless_Peach.src.consoles;
 
-namespace Timeless_Peach{
-    class Program{
+namespace Timeless_Peach {
+    class TimelessPeach{
 
         public const int Width = 80;
         public const int Height = 25;
-        public const int virgins = 34;
 
-        static void Main(string[] args){
+        static void Main(string[] args) {
             // Setup the engine and create the main window.
             SadConsole.Game.Create(Width, Height);
 
             // Hook the start event so we can add consoles to the system.
             SadConsole.Game.OnInitialize = Init;
+            SadConsole.Game.OnUpdate = Tick;
 
             // Start the game.
             SadConsole.Game.Instance.Run();
             SadConsole.Game.Instance.Dispose();
         }
 
-        private static void Init(){
-            // Any startup code for your game. We will use an example console for now
-            var startingConsole = SadConsole.Global.CurrentScreen;
-            startingConsole.FillWithRandomGarbage();
-            startingConsole.Fill(new Rectangle(3, 3, 27, 5), null, Color.Black, 0, SpriteEffects.None);
-            startingConsole.Print(6, 5, "Hello from SadConsole", ColorAnsi.CyanBright);
+        //update function
+        private static void Tick(GameTime t) {
+
+        }
+
+        private static void Init() {
+            // Startup code
+            var rootConsole = new ContainerConsole();
+            SadConsole.Global.CurrentScreen = rootConsole;
+
+            rootConsole.Children.Add(new MainMenuConsole("Timeless Peach"));
+
         }
     }
 }
