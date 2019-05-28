@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\consoles\MainMenuConsole.cs" />
+    <Compile Include="src\consoles\PlayConsole.cs" />
     <Compile Include="src\TimelessPeach.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

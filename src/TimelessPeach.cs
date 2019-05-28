@@ -26,7 +26,7 @@ namespace Timeless_Peach {
 
         //update function
         private static void Tick(GameTime t) {
-
+            
         }
 
         private static void Init() {
@@ -34,8 +34,14 @@ namespace Timeless_Peach {
             var rootConsole = new ContainerConsole();
             SadConsole.Global.CurrentScreen = rootConsole;
 
-            rootConsole.Children.Add(new MainMenuConsole("Timeless Peach"));
+            rootConsole.Children.Add(new PlayConsole());
+            CreatePlayer();
+        }
 
+        private static void CreatePlayer() {
+            SadConsole.Entities.Entity player = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'@');
+            player.Position = new Point(10, 10);
+            SadConsole.Global.CurrentScreen.Children.Add(player);
         }
     }
 }
