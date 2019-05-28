@@ -10,7 +10,6 @@ namespace Timeless_Peach {
 
         public const int Width = 80;
         public const int Height = 25;
-        public static SadConsole.Entities.Entity player;
 
         static void Main(string[] args) {
             // Setup the engine and create the main window.
@@ -28,6 +27,7 @@ namespace Timeless_Peach {
         //update function
         private static void Tick(GameTime t) {
             
+            /* ------Moving to another location when i find best spot for player
             //North movement
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad8)
                 || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up))
@@ -63,6 +63,7 @@ namespace Timeless_Peach {
             //South-east movement
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad3))
                 player.Position += new Point(1, 1);
+                */
 
         }
 
