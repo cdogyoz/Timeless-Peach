@@ -16,9 +16,11 @@ namespace Timeless_Peach.src.consoles {
                 for (int y = 0; y < height; y++) {
                     SadConsole.Entities.Entity ground = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'-');
                     ground.Position = new Point(x, y);
-                    Children.Add(ground);
+                   // Children.Add(ground);
                 }
             }
+
+            Print(0, 0, "World Viewport", Color.White);
         }
 
     }
