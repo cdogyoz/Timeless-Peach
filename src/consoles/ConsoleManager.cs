@@ -12,7 +12,15 @@ namespace Timeless_Peach.src.consoles {
             IsVisible = true;
             IsFocused = true;
 
+            PlayConsole gameScreen = new PlayConsole();
+
             Parent = SadConsole.Global.CurrentScreen;
+            Children.Add(gameScreen);
+        }
+
+        public override void Update(TimeSpan timeElapsed) {
+
+            base.Update(timeElapsed);
         }
 
     }

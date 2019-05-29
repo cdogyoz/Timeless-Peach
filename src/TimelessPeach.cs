@@ -68,11 +68,9 @@ namespace Timeless_Peach {
         }
 
         private static void Init() {
-            // Startup code
-            var rootConsole = new ContainerConsole();
-            SadConsole.Global.CurrentScreen = rootConsole;
-
-            rootConsole.Children.Add(new PlayConsole());
+            
+            // Begins the game 
+            ContainerConsole game = new ConsoleManager();
             
         }
 
