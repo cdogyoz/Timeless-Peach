@@ -13,10 +13,10 @@ namespace Timeless_Peach.src.consoles {
         public WorldConsole() : base(200, 200, new Rectangle(0, 0, 65, 20)) {
 
             for (int x = 0; x < width; x++) {
-                for (int y = 0; y < height; y++) {
+                for (int y = 1; y < height; y++) {
                     SadConsole.Entities.Entity ground = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'-');
                     ground.Position = new Point(x, y);
-                   // Children.Add(ground);
+                    Children.Add(ground);
                 }
             }
 
