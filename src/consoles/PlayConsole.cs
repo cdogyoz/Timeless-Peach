@@ -14,17 +14,20 @@ namespace Timeless_Peach.src.consoles {
         private ConsoleManager conMan;
         public int turn;
         public int lastTurn;
+        public int consoleY;
+        public ScrollingConsole logConsole;
 
         public PlayConsole(ConsoleManager conMan) {
 
             this.conMan = conMan;
             turn = 1;
             lastTurn = 0;
+            logConsole = new MessageConsole();
+            consoleY = 2;
 
             //Add the consoles found in the play screen:
 
             var worldConsole = new WorldConsole();            //World viewport
-            var logConsole = new MessageConsole();              //Message Log console
             var infoConsole = new InfoConsole(this);
 
             player = new Construct(Color.Green, Color.Black, '@', new Point(10, 10));
@@ -53,24 +56,32 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2))) {
                 player.Position += new Point(0, 1);
                 turn++;
+                logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
+                consoleY++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up)
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad8))) {
                 player.Position += new Point(0, -1);
                 turn++;
+                logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
+                consoleY++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Left)
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad4))) {
                 player.Position += new Point(-1, 0);
                 turn++;
+                logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
+                consoleY++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Right)
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad6))) {
                 player.Position += new Point(1, 0);
                 turn++;
+                logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
+                consoleY++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad1)) {
