@@ -5,6 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Timeless_Peach.src.components {
-    class Component {
+    interface Component {
     }
 }

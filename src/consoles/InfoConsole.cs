@@ -13,7 +13,7 @@ namespace Timeless_Peach.src.consoles {
             this.playCon = playCon;
 
             Fill(Color.Orange, Color.Orange, ' ', null);
-            Print(0, 0, "Info Console", Color.White);
+            Print(1, 0, "INFO CONSOLE", Color.White);
             
         }
 

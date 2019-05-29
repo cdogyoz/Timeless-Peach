@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\components\Component.cs" />
-    <Compile Include="src\components\Physics.cs" />
+    <Compile Include="src\components\Render.cs" />
     <Compile Include="src\consoles\ConsoleManager.cs" />
     <Compile Include="src\consoles\InfoConsole.cs" />
     <Compile Include="src\consoles\MainMenuConsole.cs" />
@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\blueprints\tree.xml" />
+    <Content Include="GameDesign.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

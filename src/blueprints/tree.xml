@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<object Name = "Tree">
-  <part Name = "Render"></part>
-</object>
+<construct Name = "Tree">
+  <component Name = "Physics" Health = "10" Solid = "True"></component>
+  <component Name = "Render" Glyph = "190"></component>
+</construct>
