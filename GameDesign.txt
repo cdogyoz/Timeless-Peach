@@ -10,7 +10,7 @@ The resulting game world would look like so:
 				X X X
 with each 'X' representing a traversable zone in the game world.
 In turn, the zones themselves are a 3 x 3 of individual maps. Maps are a 100x50 grid of drawable cells and entities.
-In total the map is 81 connected 100x50 cell maps.
+In total the world map is 81 connected 100x50 cell maps.
 The zones are generated using a zone type generator that can be used to hard code rules for map gen.
 Zone Examples: Desert - Has cacti, camels, sand village, sand dungeon
 			   City- Massive sprawling city that covers a large portion of the map 
