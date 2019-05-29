@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Timeless_Peach.src.components {
-    class Render : Component {
+    class Physics : Component {
+        bool isVisible;
+        bool isSolid;
     }
 }
