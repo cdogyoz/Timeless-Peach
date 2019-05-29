@@ -38,7 +38,6 @@ namespace Timeless_Peach.src.consoles {
                 Print(38, 14, "Quit", Color.Red);
             }
 
-            Debug.WriteLine(selectChoice);
         }
 
         private void CheckInput() {

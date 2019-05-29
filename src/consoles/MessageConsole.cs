@@ -9,8 +9,9 @@ namespace Timeless_Peach.src.consoles {
     class MessageConsole : ScrollingConsole {
 
         public MessageConsole() : base(80, 5){
-            Fill(Color.Blue, Color.Blue, (int)' ', null);
-            Print(0, 0, "Log Console", Color.White);
+            Fill(Color.Blue, Color.Black, (int)' ', null);
+            Print(34, 0, "LOG CONSOLE", Color.White, Color.Black);
+            Print(0, 1, "Welcome to Timeless Peach!", Color.Green, Color.Blue);
         }
 
     }
