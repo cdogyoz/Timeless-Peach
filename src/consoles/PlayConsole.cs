@@ -9,7 +9,7 @@ using Timeless_Peach.src.constructs;
 namespace Timeless_Peach.src.consoles {
     class PlayConsole : ContainerConsole {
 
-        public SadConsole.Entities.Entity player;
+        public Construct player;
 
         private ConsoleManager conMan;
         public PlayConsole(ConsoleManager conMan) {
@@ -22,7 +22,7 @@ namespace Timeless_Peach.src.consoles {
             var logConsole = new MessageConsole();              //Message Log console
             var infoConsole = new InfoConsole();
 
-            player = new PlayerConstruct();
+            player = new Construct(Color.Green, Color.Black, '@', new Point(10, 10));
             logConsole.Position = new Point(0, 20);
             infoConsole.Position = new Point(65, 0);
 
