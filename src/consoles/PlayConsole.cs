@@ -11,7 +11,10 @@ namespace Timeless_Peach.src.consoles {
 
         public SadConsole.Entities.Entity player;
 
-        public PlayConsole() {
+        private ConsoleManager conMan;
+        public PlayConsole(ConsoleManager conMan) {
+
+            this.conMan = conMan;
 
             //Add the consoles found in the play screen:
 
