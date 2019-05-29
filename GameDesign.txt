@@ -2,39 +2,17 @@
 ----------------
 //ALL IDEAS ARE WIP 
 
-Every time a new character is created a new world is generated. 
-A world is generated out of 9 "zones". Each zone representing a bit of the game world. 
-The resulting game world would look like so: 
-				X X X
-				X X X
-				X X X
-with each 'X' representing a traversable zone in the game world.
-In turn, the zones themselves are a 3 x 3 of individual maps. Maps are a 100x50 grid of drawable cells and entities.
-In total the world map is 81 connected 100x50 cell maps.
-The zones are generated using a zone type generator that can be used to hard code rules for map gen.
-Zone Examples: Desert - Has cacti, camels, sand village, sand dungeon
-			   City- Massive sprawling city that covers a large portion of the map 
-
 The player begins the game by creating their character. 
 The character creation fields are as follows:
 	-Character Name
 	-Character Race (Human, Giant, etc.. whatever we decide to include)
-	-Stats 
+	-Stats
 
-Once the character is created the world is generated. The race the player chooses will determine the zone the character starts. This could allow for a natural difficulty selection system.
-The world will be populated with towns, dungeons, and enemies based on the zones they belong to.
+The goal of the game is to descend 20 levels into the Dungeon of the Timeless, retrieve the Aether Orb, then ascend back up and out the exit to win the game.
 
-The baseline goal of the game is to survive in the world. Walk around a chop trees to build a shelter for yourself. Visit towns and trade items found in the world. Explore dungeons for loot.
-The ultimate goal of the game is to thrive. Build a town that competes with other societies. Kill foreign kings. Defeat the fiercest bosses and warlords.
-We can really go anywhere with the basis of a town-building roguelike. I havent really seen it done before.
-
-If the player dies in the game world the player and world save are deleted so replaying requires a fresh start. (Unless we implement having kids in game to continue your legacy which could be cool)
-
-Actions are associated with skills that you get better at over time:
-	ex. Getting better at Woodcutting skill by chopping trees
-		Increasing Sword skill by slaying monsters with sword
-
-There's a dope program called Rexpaint that we can use to pre-create text graphic assets that can be loaded into the game. Things like building graphics for cities and stuff
+Dungeon Levels (Tentative - Feel free to add ideas)
+--------------
+The Crypt - Level filled with undead enemies. They come from the graves to attack you. Sequential large rooms filled with graves connected by long narrow hallways.
 
 
 Game Architecture
