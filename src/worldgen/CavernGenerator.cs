@@ -12,13 +12,14 @@ namespace Timeless_Peach.src.worldgen {
 
         private int width = 65;
         private int height = 20;
-        private int seed = 11576;
+        private int seed;
         private WorldConsole world;
 
         public CavernGenerator(int width, int height, WorldConsole world) {
             this.width = width;
             this.height = height;
             this.world = world;
+            seed = DateTime.Now.Millisecond;
         }
 
         public Tile[] CreateLevel() {
