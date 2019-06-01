@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Timeless_Peach.src.consoles;
 
 namespace Timeless_Peach.src.worldgen {
     class World {
@@ -11,12 +12,12 @@ namespace Timeless_Peach.src.worldgen {
         private int width;
         private int height;
 
-        public World(int width, int height) {
+        public World(int width, int height, WorldConsole world) {
             tiles = new Tile[width * height];
             this.width = width;
             this.height = height;
 
-            tiles = new CavernGenerator(width, height).CreateLevel();
+            tiles = new CavernGenerator(width, height, world).CreateLevel();
         }
     }
 }

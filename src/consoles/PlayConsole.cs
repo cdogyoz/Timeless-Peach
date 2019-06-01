@@ -29,8 +29,10 @@ namespace Timeless_Peach.src.consoles {
             logConsole = new MessageConsole();
             consoleY = 2;
 
+            worldConsole = new WorldConsole(new Cell[65 * 20]);
+
             //Add the consoles found in the play screen
-            level = new World(65, 20).tiles;
+            level = new World(65, 20, worldConsole).tiles;
 
             worldConsole = new WorldConsole(level);      //World viewport
             var infoConsole = new InfoConsole(this);

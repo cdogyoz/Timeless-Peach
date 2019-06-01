@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using SadConsole;
+using Timeless_Peach.src.consoles;
 
 namespace Timeless_Peach.src.worldgen {
     class CavernGenerator {
 
         private int width = 65;
         private int height = 20;
-        private int seed = 11524;
+        private int seed = 11576;
+        private WorldConsole world;
 
-        public CavernGenerator(int width, int height) {
+        public CavernGenerator(int width, int height, WorldConsole world) {
             this.width = width;
             this.height = height;
+            this.world = world;
         }
 
         public Tile[] CreateLevel() {
@@ -27,10 +31,70 @@ namespace Timeless_Peach.src.worldgen {
                 for(int y = 0; y < height; y++) {
                     int randNum = r.Next(0, 100);
                     
-                    if(randNum <= 50) {
-                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true);
+                    if(randNum <= 35) {
+                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
                     } else {
-                        twoLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-');
+                        twoLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-', false, "ground");
+                    }
+                }
+            }
+
+            int smooths = 3;
+
+            for(int s = 0; s < smooths; s++) {
+                Tile[,] smoothedLevel = new Tile[width, height];
+                for(int x = 0; x < width ; x++) {
+
+                    for(int y = 0; y < height; y++) {
+                        //Count amount of walls in 3x3 area
+                        //The tile becomes a wall if 5 or more neighbor tiles are walls
+                        int walls = 0;
+
+                        if (world.IsValidCell(x, y) && twoLevel[x, y].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x-1, y-1) && twoLevel[x-1, y-1].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x, y-1) && twoLevel[x, y-1].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x + 1, y - 1) && twoLevel[x + 1, y - 1].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x - 1, y ) && twoLevel[x - 1, y].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x + 1, y) && twoLevel[x + 1, y].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x - 1, y + 1) && twoLevel[x - 1, y + 1].name == "wall") {
+                            walls++;
+                        }
+                        if (world.IsValidCell(x, y + 1)) {
+                            if(twoLevel[x, y + 1].name == "wall") {
+                                walls++;
+                            }
+
+                        }
+                        if (world.IsValidCell(x + 1, y + 1) && twoLevel[x + 1, y + 1].name == "wall") {
+                            walls++;
+                        }
+
+                        //Check if walls are greater than or equal to 5
+                        if(walls >= 4) {
+                            smoothedLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
+
+                        } else {
+                            smoothedLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-', false, "ground");
+                          
+                        }
+                    }
+                }
+               
+                for(int x = 0; x < width; x++) {
+                    for(int y = 0; y < height; y++) {
+                        twoLevel[x, y] = smoothedLevel[x, y];
                     }
                 }
             }
