@@ -10,6 +10,7 @@ namespace Timeless_Peach.src.worldgen {
 
         private int width = 65;
         private int height = 20;
+        private int seed = 11524;
 
         public CavernGenerator(int width, int height) {
             this.width = width;
@@ -20,10 +21,10 @@ namespace Timeless_Peach.src.worldgen {
 
             Tile[,] twoLevel = new Tile[width, height];
             Tile[] oneLevel = new Tile[width * height];
+            Random r = new Random(seed);
 
-            for(int x = 0; x < width; x++) {
+            for (int x = 0; x < width; x++) {
                 for(int y = 0; y < height; y++) {
-                    Random r = new Random(x * y);
                     int randNum = r.Next(0, 100);
                     
                     if(randNum <= 50) {
