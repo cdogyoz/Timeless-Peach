@@ -100,6 +100,8 @@ namespace Timeless_Peach.src.worldgen {
                 }
             }
 
+            //twoLevel = Decorate(twoLevel);
+
             //Convert to 1D array
             int i = 0;
             for(int x = 0; x < width; x++) {
@@ -112,5 +114,11 @@ namespace Timeless_Peach.src.worldgen {
             return oneLevel;
 
         }
+
+        public Cell[] Decorate(Cell[,] level) {
+
+            return new Cell[64];
+        }
+
     }
 }
