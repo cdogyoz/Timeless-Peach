@@ -28,9 +28,9 @@ namespace Timeless_Peach.src.worldgen {
                     int randNum = r.Next(0, 100);
                     
                     if(randNum <= 50) {
-                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#');
+                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true);
                     } else {
-                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'-');
+                        twoLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-');
                     }
                 }
             }
