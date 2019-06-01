@@ -3,25 +3,20 @@
 using SadConsole;
 using System;
 using Console = SadConsole.Console;
+using Timeless_Peach.src.worldgen;
 
 namespace Timeless_Peach.src.consoles {
-    class WorldConsole : ScrollingConsole {
+    class WorldConsole : Console{
 
         private const int width = 65;
         private const int height = 20;
 
-        public WorldConsole() : base(200, 200, new Rectangle(0, 0, 65, 20)) {
+        public WorldConsole(Cell[] level) : base(width, height, level) {
 
-            for (int x = 0; x < width; x++) {
-                for (int y = 1; y < height; y++) {
-                    SadConsole.Entities.Entity ground = new SadConsole.Entities.Entity(Color.White, Color.Black, (int)'-');
-                    ground.Position = new Point(x, y);
-                    Children.Add(ground);
-                }
-            }
-
-            Print(0, 0, "World Viewport", Color.White);
         }
 
+        public override void Update(TimeSpan timeElapsed) {
+            base.Update(timeElapsed);
+        }
     }
 }

@@ -120,6 +120,8 @@
     <Compile Include="src\events\Event.cs" />
     <Compile Include="src\TimelessPeach.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\worldgen\CavernGenerator.cs" />
+    <Compile Include="src\worldgen\Tile.cs" />
     <Compile Include="src\worldgen\World.cs" />
   </ItemGroup>
   <ItemGroup>

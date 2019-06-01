@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Timeless_Peach.src.consoles;
 using Timeless_Peach.src.constructs;
+using Timeless_Peach.src.worldgen;
 
 namespace Timeless_Peach.src.consoles {
     class PlayConsole : ContainerConsole {
@@ -17,6 +18,8 @@ namespace Timeless_Peach.src.consoles {
         public int consoleY;
         public ScrollingConsole logConsole;
 
+        private World world;
+        private Cell[] level;
         public PlayConsole(ConsoleManager conMan) {
 
             this.conMan = conMan;
@@ -25,9 +28,10 @@ namespace Timeless_Peach.src.consoles {
             logConsole = new MessageConsole();
             consoleY = 2;
 
-            //Add the consoles found in the play screen:
+            //Add the consoles found in the play screen
+            level = new World(65, 20).tiles;
 
-            var worldConsole = new WorldConsole();            //World viewport
+            var worldConsole = new WorldConsole(level);      //World viewport
             var infoConsole = new InfoConsole(this);
 
             player = new Construct(Color.Green, Color.Black, '@', new Point(10, 10));
