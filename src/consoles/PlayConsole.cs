@@ -68,11 +68,13 @@ namespace Timeless_Peach.src.consoles {
                 if(worldConsole.GetGlyph(xPos, yPos +1) != (int)'#'){
                     player.Position += new Point(0, 1);
                     turn++;
+                    logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
                         logConsole.ShiftUp();
                     }
-                    logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
-                    consoleY++;
+                    else {
+                        consoleY++;
+                    }
                 }
 
             }
@@ -83,11 +85,13 @@ namespace Timeless_Peach.src.consoles {
                 if (worldConsole.GetGlyph(xPos, yPos - 1) != (int)'#') {
                     player.Position += new Point(0, -1);
                     turn++;
+                    logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
                         logConsole.ShiftUp();
                     }
-                    logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
-                    consoleY++;
+                    else {
+                        consoleY++;
+                    }
                 }
             }
 
@@ -97,11 +101,13 @@ namespace Timeless_Peach.src.consoles {
                 if (worldConsole.GetGlyph(xPos - 1, yPos) != (int)'#') {
                     player.Position += new Point(-1, 0);
                     turn++;
+                    logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
                         logConsole.ShiftUp();
                     }
-                    logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
-                    consoleY++;
+                    else {
+                        consoleY++;
+                    }
                 }
             }
 
@@ -111,11 +117,13 @@ namespace Timeless_Peach.src.consoles {
                 if (worldConsole.GetGlyph(xPos + 1, yPos) != (int)'#') {
                     player.Position += new Point(1, 0);
                     turn++;
+                    logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
                         logConsole.ShiftUp();
                     }
-                    logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
-                    consoleY++;
+                    else {
+                        consoleY++;
+                    }
                 }
             }
 
