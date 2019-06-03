@@ -12,7 +12,11 @@ namespace Timeless_Peach.src.constructs {
         //Human specific instructions go here
 
         public HumanConstruct(Point position) : base(Color.White, Color.Black, (int)'@', position) {
-
+            base.strength = 10;
+            base.agility = 10;
+            base.intelligence = 10;
+            base.divinity = 10;
+            health = CalculateHealth();
         }
 
     }

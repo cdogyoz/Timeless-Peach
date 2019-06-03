@@ -10,7 +10,7 @@ using Timeless_Peach.src.worldgen;
 namespace Timeless_Peach.src.consoles {
     class PlayConsole : ContainerConsole {
 
-        private PlayableConstruct player;
+        public PlayableConstruct player;
 
         private ConsoleManager conMan;
         public int turn;
@@ -35,15 +35,13 @@ namespace Timeless_Peach.src.consoles {
             level = new World(65, 20, worldConsole).tiles;
 
             worldConsole = new WorldConsole(level);      //World viewport
-            var infoConsole = new InfoConsole(this);
+
 
             logConsole.Position = new Point(0, 20);
-            infoConsole.Position = new Point(65, 0);
 
 
             Children.Add(worldConsole);
             Children.Add(logConsole);
-            Children.Add(infoConsole);
 
         }
 
@@ -58,6 +56,9 @@ namespace Timeless_Peach.src.consoles {
         public void AddPlayer(PlayableConstruct player) {
             this.player = player;
             worldConsole.Children.Add(player);
+            var infoConsole = new InfoConsole(this);
+            infoConsole.Position = new Point(65, 0);
+            Children.Add(infoConsole);
             Global.CurrentScreen = this;
 
         }
