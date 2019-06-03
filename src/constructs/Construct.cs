@@ -7,15 +7,11 @@ using SadConsole;
 namespace Timeless_Peach.src.constructs {
     class Construct : SadConsole.Entities.Entity {
 
-        List<Component> components;
+        //private string name;
 
         public Construct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph) {
             Position = position;
+            //this.name = name;
         }
-
-        bool FireEvent() {
-            return true;
-        }
-
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using SadConsole;
 using SadConsole.Controls;
+using Timeless_Peach.src.constructs;
 
 //Manages all of the consoles used in the game
 
@@ -27,6 +28,10 @@ namespace Timeless_Peach.src.consoles {
         public override void Update(TimeSpan timeElapsed) {
             
             base.Update(timeElapsed);
+        }
+
+        public void CreateGame(PlayableConstruct player) {
+            gameScreen.AddPlayer(player);
         }
 
         private void CheckKeyboard() {

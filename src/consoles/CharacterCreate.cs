@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SadConsole;
 using Microsoft.Xna.Framework;
 using Timeless_Peach.src.components;
+using Timeless_Peach.src.constructs;
 
 namespace Timeless_Peach.src.consoles {
     class CharacterCreate : SadConsole.Console {
@@ -96,7 +97,18 @@ namespace Timeless_Peach.src.consoles {
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space)) {
-                SadConsole.Global.CurrentScreen = conMan.gameScreen;
+                if (selectChoice == 0) {
+                    conMan.CreateGame(new HumanConstruct(new Point(10, 10)));
+                }
+                if (selectChoice == 1) {
+                    conMan.CreateGame(new KimiConstruct(new Point(10, 10)));
+                }
+                if (selectChoice == 2) {
+                    conMan.CreateGame(new HighUveseConstruct(new Point(10, 10)));
+                }
+                if (selectChoice == 3) {
+                    conMan.CreateGame(new BronkConstruct(new Point(10, 10)));
+                }
             }
         }
     }

@@ -117,7 +117,12 @@
     <Compile Include="src\consoles\MessageConsole.cs" />
     <Compile Include="src\consoles\PlayConsole.cs" />
     <Compile Include="src\consoles\WorldConsole.cs" />
+    <Compile Include="src\constructs\BronkConstruct.cs" />
     <Compile Include="src\constructs\Construct.cs" />
+    <Compile Include="src\constructs\HighUveseConstruct.cs" />
+    <Compile Include="src\constructs\HumanConstruct.cs" />
+    <Compile Include="src\constructs\KimiConstruct.cs" />
+    <Compile Include="src\constructs\PlayableConstruct.cs" />
     <Compile Include="src\events\Event.cs" />
     <Compile Include="src\TimelessPeach.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
