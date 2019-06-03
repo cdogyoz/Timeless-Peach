@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="src\blueprints\tree.xml" />
-    <Content Include="GameDesign.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
