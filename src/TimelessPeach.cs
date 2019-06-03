@@ -17,7 +17,7 @@ namespace Timeless_Peach {
 
             // Hook the start event so we can add consoles to the system.
             SadConsole.Game.OnInitialize = Init;
-            SadConsole.Game.OnUpdate = Tick;
+            SadConsole.Game.OnUpdate = Update;
 
             // Start the game.
             SadConsole.Game.Instance.Run();
@@ -25,7 +25,7 @@ namespace Timeless_Peach {
         }
 
         //update function
-        private static void Tick(GameTime t) {
+        private static void Update(GameTime t) {
 
         }
 

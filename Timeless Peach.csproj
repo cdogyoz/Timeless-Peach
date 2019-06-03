@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="src\components\Component.cs" />
     <Compile Include="src\components\Render.cs" />
+    <Compile Include="src\consoles\CharacterCreate.cs" />
     <Compile Include="src\consoles\ConsoleManager.cs" />
     <Compile Include="src\consoles\InfoConsole.cs" />
     <Compile Include="src\consoles\MainMenuConsole.cs" />

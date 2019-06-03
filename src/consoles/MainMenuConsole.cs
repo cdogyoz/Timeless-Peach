@@ -13,12 +13,14 @@ namespace Timeless_Peach.src.consoles {
         private string title;
         private ConsoleManager conMan;
         private String currentRace = "You have not chosen a race yet.";
+        private CharacterCreate create;
 
         public MainMenuConsole(string title, ConsoleManager conMan) : base(80, 25) {
             IsFocused = true;
             IsVisible = true;
             this.title = title;
             this.conMan = conMan;
+            
         }
 
         public override void Update(TimeSpan timeElapsed) {
@@ -140,7 +142,7 @@ namespace Timeless_Peach.src.consoles {
                 }
                 if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)) {
                     if (selectChoice == 0) {
-                        SadConsole.Global.CurrentScreen = conMan.gameScreen;
+                        SadConsole.Global.CurrentScreen = conMan.create;
                     }
                 }
                 if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)) {

@@ -10,6 +10,7 @@ namespace Timeless_Peach.src.consoles {
 
         public PlayConsole gameScreen; //The game screen
         public MainMenuConsole mainMenu;
+        public CharacterCreate create;
 
 
         public ConsoleManager() {
@@ -17,6 +18,7 @@ namespace Timeless_Peach.src.consoles {
             IsFocused = true;
             mainMenu = new MainMenuConsole("Timeless Peach", this);
             gameScreen = new PlayConsole(this);
+            create = new CharacterCreate(this);
 
             Parent = SadConsole.Global.CurrentScreen;
             Children.Add(mainMenu);
