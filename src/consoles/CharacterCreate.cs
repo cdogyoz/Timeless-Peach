@@ -17,7 +17,15 @@ namespace Timeless_Peach.src.consoles {
             this.conMan = conMan;
             Print(33, 0, "Character Create", Color.White, Color.Black);
             Print(33, 24, "Press space to play", Color.Black, Color.PeachPuff);
+        }
 
+        public override void Update(TimeSpan timeElapsed) {
+            DrawMenuOptions();
+            CheckInput();
+            base.Update(timeElapsed);
+        }
+
+        private void DrawMenuOptions() {
             if (selectChoice == 0) {
                 Print(38, 10, "Human", Color.Red);
                 Print(38, 12, "Kimi", Color.White);
@@ -51,7 +59,7 @@ namespace Timeless_Peach.src.consoles {
             }
         }
 
-        public override void Update(TimeSpan timeElapsed) {
+        private void CheckInput() {
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down)) {
                 if (selectChoice < 3) {
                     selectChoice++;
@@ -88,7 +96,6 @@ namespace Timeless_Peach.src.consoles {
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space)) {
                 SadConsole.Global.CurrentScreen = conMan.gameScreen;
             }
-            base.Update(timeElapsed);
         }
     }
 }
