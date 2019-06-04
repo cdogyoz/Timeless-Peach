@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 namespace Timeless_Peach.src.constructs {
     class PlayableConstruct : Construct {
 
-        
+        public int maxStamina;
 
         //Anything that is playable will inherit from this class
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SadConsole;
+using SadConsole.Controls;
 using Microsoft.Xna.Framework;
 using Timeless_Peach.src.components;
 using Timeless_Peach.src.constructs;
@@ -14,6 +15,7 @@ namespace Timeless_Peach.src.consoles {
         private ConsoleManager conMan;
         private int selectChoice = 0;
         static public string currentRace = "You choose Human.";
+        private string name = "";
 
         public CharacterCreate(ConsoleManager conMan) : base(80, 25) {
             this.conMan = conMan;
@@ -117,18 +119,34 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space)) {
                 if (selectChoice == 0) {
-                    conMan.CreateGame(new HumanConstruct(new Point(10, 10)));
+                    name = EnterName();
+                    conMan.CreateGame(new HumanConstruct("Charles",new Point(10, 10)));
                 }
                 if (selectChoice == 1) {
+                    name = EnterName();
                     conMan.CreateGame(new KimiConstruct(new Point(10, 10)));
                 }
                 if (selectChoice == 2) {
+                    name = EnterName();
                     conMan.CreateGame(new HighUveseConstruct(new Point(10, 10)));
                 }
                 if (selectChoice == 3) {
-                    conMan.CreateGame(new BronkConstruct(new Point(10, 10)));
+                    name = EnterName();
+                   conMan.CreateGame(new BronkConstruct(new Point(10, 10)));
                 }
             }
+        }
+
+        private string EnterName() {
+            ControlsConsole nameConsole = new ControlsConsole(40, 3);
+            nameConsole.Position = new Point(15, 18);
+            this.Children.Add(nameConsole);
+            TextBox nameIn = new TextBox(40);
+            nameIn.IsEnabled = true;
+            nameIn.IsVisible = true;
+            nameConsole.Add(nameIn);
+            nameIn.ProcessKeyboard(new SadConsole.Input.Keyboard());
+            return "string";
         }
     }
 }

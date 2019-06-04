@@ -8,6 +8,7 @@ namespace Timeless_Peach.src.constructs {
     class Construct : SadConsole.Entities.Entity {
 
         //private string name;
+        protected string name;
         protected int strength;
         protected int agility;
         protected int intelligence;
@@ -19,6 +20,13 @@ namespace Timeless_Peach.src.constructs {
         public Construct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph) {
             Position = position;
             //this.name = name;
+        }
+        public void MoveBy(Point move) {
+            Position += move;
+        }
+
+        public string GetName() {
+            return name;
         }
 
         public int getStrength() {

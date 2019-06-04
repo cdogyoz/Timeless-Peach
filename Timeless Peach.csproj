@@ -123,6 +123,7 @@
     <Compile Include="src\constructs\HumanConstruct.cs" />
     <Compile Include="src\constructs\KimiConstruct.cs" />
     <Compile Include="src\constructs\PlayableConstruct.cs" />
+    <Compile Include="src\constructs\SkeletonConstruct.cs" />
     <Compile Include="src\events\Event.cs" />
     <Compile Include="src\TimelessPeach.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

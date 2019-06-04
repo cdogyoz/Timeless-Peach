@@ -47,7 +47,13 @@ namespace Timeless_Peach.src.consoles {
 
         public override void Update(TimeSpan timeElapsed) {
 
-            PlayerInput();
+            //if player stamina is less than or equal to 0 then end turn
+            if(player.getStamina() >= 0) {
+                PlayerInput();
+            } else {
+                //Run enemies()
+                player.setStamina(player.maxStamina);
+            }
                 
             
             base.Update(timeElapsed);
@@ -72,7 +78,7 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2))) {
 
                 if(worldConsole.GetGlyph(xPos, yPos +1) != (int)'#'){
-                    player.Position += new Point(0, 1);
+                    player.MoveBy(new Point(0, 1));
                     turn++;
                     logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
