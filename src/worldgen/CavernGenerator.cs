@@ -35,7 +35,7 @@ namespace Timeless_Peach.src.worldgen {
                     if(randNum <= 35) {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
                     } else {
-                        twoLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-', false, "ground");
+                        twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'-', false, "ground");
                     }
                 }
             }
@@ -84,10 +84,10 @@ namespace Timeless_Peach.src.worldgen {
 
                         //Check if walls are greater than or equal to 5
                         if(walls >= 4) {
-                            smoothedLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
+                            smoothedLevel[x, y] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
 
                         } else {
-                            smoothedLevel[x, y] = new Tile(Color.Brown, Color.Black, (int)'-', false, "ground");
+                            smoothedLevel[x, y] = new Tile(Color.Gray, Color.Black, (int)'-', false, "ground");
                           
                         }
                     }

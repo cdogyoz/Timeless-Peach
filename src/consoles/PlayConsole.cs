@@ -38,9 +38,11 @@ namespace Timeless_Peach.src.consoles {
 
 
             logConsole.Position = new Point(0, 20);
+            SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10));
 
 
             Children.Add(worldConsole);
+            worldConsole.Children.Add(skel);
             Children.Add(logConsole);
 
         }
