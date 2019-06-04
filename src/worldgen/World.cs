@@ -12,6 +12,10 @@ namespace Timeless_Peach.src.worldgen {
         private int width;
         private int height;
 
+        public World() {
+
+        }
+
         public World(int width, int height, WorldConsole world) {
             dungeon = new List<Level>(); //Create a new dungeon with 5 total levels
             this.width = width;

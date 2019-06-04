@@ -13,7 +13,7 @@ namespace Timeless_Peach.src.consoles {
         public PlayableConstruct player;
 
         private ConsoleManager conMan;
-        private int curLevel = 0;
+        private int curLevel = 1;
         public int turn;
         public int lastTurn;
         public int consoleY;
@@ -32,17 +32,16 @@ namespace Timeless_Peach.src.consoles {
             escapeOptionsConsole = new EscapeOptionsConsole(conMan);
             consoleY = 2;
 
-            worldConsole = new WorldConsole(new Cell[65 * 20]);
+            worldConsole = new WorldConsole(new World());
 
             //Add the consoles found in the play screen
-            world = new World(65, 20, worldConsole);
+            world = new World(100, 100, worldConsole);
 
-            worldConsole = new WorldConsole(world.dungeon[0].Cells);      //World viewport
-
+            worldConsole = new WorldConsole(world);      //World viewport
+            worldConsole.MoveLevel(0);
 
             logConsole.Position = new Point(0, 20);
             SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
-
 
             Children.Add(worldConsole);
             worldConsole.Children.Add(skel);
@@ -79,8 +78,7 @@ namespace Timeless_Peach.src.consoles {
             int yPos = player.Position.Y;
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Y)) {
-                worldConsole.Clear();
-                worldConsole.SetSurface(world.dungeon[++curLevel].Cells, worldConsole.Width, worldConsole.Height);
+                worldConsole.MoveLevel(1);
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down)
@@ -88,6 +86,7 @@ namespace Timeless_Peach.src.consoles {
 
                 if(worldConsole.GetGlyph(xPos, yPos +1) != (int)'#'){
                     player.MoveBy(new Point(0, 1));
+                    worldConsole.ShiftUp();
                     turn++;
                     logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -105,6 +104,7 @@ namespace Timeless_Peach.src.consoles {
 
                 if (worldConsole.GetGlyph(xPos, yPos - 1) != (int)'#') {
                     player.Position += new Point(0, -1);
+                    worldConsole.ShiftDown();
                     turn++;
                     logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -121,6 +121,7 @@ namespace Timeless_Peach.src.consoles {
 
                 if (worldConsole.GetGlyph(xPos - 1, yPos) != (int)'#') {
                     player.Position += new Point(-1, 0);
+                    worldConsole.ShiftRight();
                     turn++;
                     logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -137,6 +138,7 @@ namespace Timeless_Peach.src.consoles {
 
                 if (worldConsole.GetGlyph(xPos + 1, yPos) != (int)'#') {
                     player.Position += new Point(1, 0);
+                    worldConsole.ShiftLeft();
                     turn++;
                     logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
                     if (consoleY > 4) {

@@ -10,14 +10,13 @@ using Timeless_Peach.src.consoles;
 namespace Timeless_Peach.src.worldgen {
     class CavernGenerator {
 
-        private int width = 65;
-        private int height = 20;
+        private int width = 100;
+        private int height = 100;
         private int seed;
         private WorldConsole world;
 
         public CavernGenerator(int width, int height, WorldConsole world) {
-            this.width = width;
-            this.height = height;
+            
             this.world = world;
             seed = DateTime.Now.Millisecond;
         }
@@ -32,7 +31,7 @@ namespace Timeless_Peach.src.worldgen {
                 for(int y = 0; y < height; y++) {
                     int randNum = r.Next(0, 100);
                     
-                    if(randNum <= 21) {
+                    if(randNum <= 30) {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
                     } else {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'-', false, "ground");
