@@ -27,7 +27,7 @@ namespace Timeless_Peach.src.consoles {
         }
 
         private void DrawMenuOptions() {
-            Print(28, 4, "Character Create", Color.White, Color.Black);
+            Print(28, 1, "CHARACTER CREATE", Color.White, Color.Black);
             Print(28, 22, "Press enter to select, space to play", Color.Black, Color.PeachPuff);
             if (selectChoice == 0) {
                 Print(34, 8, "Human", Color.Red);

@@ -15,6 +15,7 @@ namespace Timeless_Peach.src.consoles {
             Fill(Color.Orange, Color.Orange, ' ', null);
             Print(1, 0, "INFO CONSOLE", Color.White);
             Print(0, 5, "Health: " + playCon.player.getHealth(), Color.White);
+            Print(0, 6, "Mana: " + playCon.player.GetMana(), Color.Blue);
             
         }
 

@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework;
 namespace Timeless_Peach.src.constructs {
     class HumanConstruct : PlayableConstruct {
 
-
         //Human specific instructions go here
 
         public HumanConstruct(Point position) : base(Color.White, Color.Black, (int)'@', position) {
@@ -16,7 +15,9 @@ namespace Timeless_Peach.src.constructs {
             base.agility = 10;
             base.intelligence = 10;
             base.divinity = 10;
+            base.stamina = 100; //Every action costs stamina
             health = CalculateHealth();
+            mana = CalculateMana();
         }
 
     }
