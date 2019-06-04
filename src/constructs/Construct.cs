@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 using SadConsole;
 
 namespace Timeless_Peach.src.constructs {
-    class Construct : SadConsole.Entities.Entity {
+    public abstract class Construct : SadConsole.Entities.Entity, GoRogue.IHasID {
 
         //private string name;
         protected string name;
@@ -15,6 +15,8 @@ namespace Timeless_Peach.src.constructs {
         protected int health;
         protected int stamina;
         protected int mana;
+
+        public uint ID { get; private set; }
 
         public Construct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph) {
             Position = position;

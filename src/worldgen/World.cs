@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Timeless_Peach.src.consoles;
+using Timeless_Peach.src.constructs;
+using SadConsole.Entities;
 
 namespace Timeless_Peach.src.worldgen {
     class World {
         public List<Level> dungeon;
+        public GoRogue.MultiSpatialMap<Construct> Entities; //Basically a more efficient List for storing things
         private int width;
         private int height;
 

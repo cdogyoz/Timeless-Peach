@@ -42,10 +42,8 @@ namespace Timeless_Peach.src.consoles {
             worldConsole.MoveLevel(0);
 
             logConsole.Position = new Point(0, 20);
-            //SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
 
             Children.Add(worldConsole);
-            //worldConsole.Children.Add(skel);
             Children.Add(logConsole);
 
         }
@@ -66,6 +64,8 @@ namespace Timeless_Peach.src.consoles {
         public void AddPlayer(PlayableConstruct player) {
             this.player = player;
             player.Components.Add(new EntityViewSyncComponent());
+            SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
+            worldConsole.Children.Add(skel);
             worldConsole.Children.Add(player);
             var infoConsole = new InfoConsole(this);
             infoConsole.Position = new Point(65, 0);
