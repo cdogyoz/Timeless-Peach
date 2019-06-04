@@ -19,6 +19,7 @@ namespace Timeless_Peach.src.consoles {
         public int consoleY;
         public ScrollingConsole logConsole;
         private WorldConsole worldConsole;
+        private Console escapeOptionsConsole;
 
         private World world;
         private Cell[] level;
@@ -28,6 +29,7 @@ namespace Timeless_Peach.src.consoles {
             turn = 1;
             lastTurn = 0;
             logConsole = new MessageConsole();
+            escapeOptionsConsole = new EscapeOptionsConsole(conMan);
             consoleY = 2;
 
             worldConsole = new WorldConsole(new Cell[65 * 20]);
@@ -144,6 +146,10 @@ namespace Timeless_Peach.src.consoles {
                         consoleY++;
                     }
                 }
+            }
+
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Escape)) {
+                Children.Add(escapeOptionsConsole);
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad1)) {

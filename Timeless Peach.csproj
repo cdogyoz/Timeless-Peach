@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\consoles\EscapeOptionsConsole.cs" />
     <Compile Include="src\consoles\CharacterCreate.cs" />
     <Compile Include="src\consoles\ConsoleManager.cs" />
     <Compile Include="src\consoles\InfoConsole.cs" />

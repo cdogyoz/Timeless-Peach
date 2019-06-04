@@ -13,7 +13,6 @@ namespace Timeless_Peach.src.consoles {
         public MainMenuConsole mainMenu;
         public CharacterCreate create;
 
-
         public ConsoleManager() {
             IsVisible = true;
             IsFocused = true;
