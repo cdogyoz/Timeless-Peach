@@ -8,8 +8,8 @@ using Timeless_Peach.src.consoles;
 namespace Timeless_Peach {
     class TimelessPeach{
 
-        public const int Width = 130;
-        public const int Height = 40;
+        public const int Width = 120;
+        public const int Height = 43;
 
         static void Main(string[] args) {
             // Setup the engine and create the main window.
