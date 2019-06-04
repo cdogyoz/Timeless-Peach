@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Timeless_Peach.src.components;
 using SadConsole;
 
 namespace Timeless_Peach.src.constructs {

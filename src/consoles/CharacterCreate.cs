@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using SadConsole;
 using SadConsole.Controls;
 using Microsoft.Xna.Framework;
-using Timeless_Peach.src.components;
 using Timeless_Peach.src.constructs;
 
 namespace Timeless_Peach.src.consoles {
