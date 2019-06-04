@@ -1,2 +1,2 @@
 # Timeless-Peach
-A Roguelike by cdogyoz and jaydeepappas
+A roguelike by cdogyoz and jaydeepappas
