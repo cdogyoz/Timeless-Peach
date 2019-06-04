@@ -14,7 +14,7 @@ namespace Timeless_Peach.src.consoles {
         private ConsoleManager conMan;
         private int selectChoice = 0;
 
-        public EscapeOptionsConsole(ConsoleManager conMan) : base(80, 25){
+        public EscapeOptionsConsole(ConsoleManager conMan) : base(TimelessPeach.Width, TimelessPeach.Height){
             this.conMan = conMan;
         }
 

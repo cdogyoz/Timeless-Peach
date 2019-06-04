@@ -41,7 +41,7 @@ namespace Timeless_Peach.src.consoles {
             worldConsole = new WorldConsole(world);      //World viewport
             worldConsole.MoveLevel(0);
 
-            logConsole.Position = new Point(0, 20);
+            logConsole.Position = new Point(0, 35);
 
             Children.Add(worldConsole);
             Children.Add(logConsole);
@@ -68,7 +68,7 @@ namespace Timeless_Peach.src.consoles {
             worldConsole.Children.Add(skel);
             worldConsole.Children.Add(player);
             var infoConsole = new InfoConsole(this);
-            infoConsole.Position = new Point(65, 0);
+            infoConsole.Position = new Point(105, 0);
             Children.Add(infoConsole);
             Global.CurrentScreen = this;
 

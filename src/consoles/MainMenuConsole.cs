@@ -13,7 +13,7 @@ namespace Timeless_Peach.src.consoles {
         private ConsoleManager conMan;
         private CharacterCreate create;
 
-        public MainMenuConsole(string title, ConsoleManager conMan) : base(80, 25) {
+        public MainMenuConsole(string title, ConsoleManager conMan) : base(TimelessPeach.Width, TimelessPeach.Height) {
             IsFocused = true;
             IsVisible = true;
             this.title = title;

@@ -18,7 +18,7 @@ namespace Timeless_Peach.src.consoles {
 
         private World dungeon;
 
-        public WorldConsole(World world) : base(100, 100, new Rectangle(0, 0, 65, 20)) {
+        public WorldConsole(World world) : base(100, 100, new Rectangle(0, 0, 100, 37)) {
             dungeon = world;
             Print(5, 5, "Hello World", Color.White);
         }
@@ -27,7 +27,7 @@ namespace Timeless_Peach.src.consoles {
             SetSurface(dungeon.dungeon[curLevel].Cells, width, height);
             curLevel += amount;
             // levelChange += amount;
-            // this.SetRenderCells();
+            // this.SetRenderCells();65
 
         }
 

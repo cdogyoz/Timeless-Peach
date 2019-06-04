@@ -9,7 +9,7 @@ namespace Timeless_Peach.src.consoles {
 
         private PlayConsole playCon;
 
-        public InfoConsole(PlayConsole playCon) : base(15, 20) {
+        public InfoConsole(PlayConsole playCon) : base(30, 40) {
             this.playCon = playCon;
             Fill(Color.DarkGray, Color.DarkGray, ' ', null);
             Print(1, 0, "INFO CONSOLE", Color.White);

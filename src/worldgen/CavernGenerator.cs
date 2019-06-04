@@ -29,7 +29,7 @@ namespace Timeless_Peach.src.worldgen {
 
             for (int x = 0; x < width; x++) {
                 for(int y = 0; y < height; y++) {
-                    int randNum = r.Next(0, 100);
+                    int randNum = r.Next(0, 125);
                     
                     if(randNum <= 30) {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");

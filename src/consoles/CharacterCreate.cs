@@ -16,7 +16,7 @@ namespace Timeless_Peach.src.consoles {
         static public string currentRace = "You choose Human.";
         private string name = "";
 
-        public CharacterCreate(ConsoleManager conMan) : base(80, 25) {
+        public CharacterCreate(ConsoleManager conMan) : base(TimelessPeach.Width, TimelessPeach.Height) {
             this.conMan = conMan;
         }
 
