@@ -4,6 +4,7 @@ using SadConsole;
 using System;
 using Console = SadConsole.Console;
 using Timeless_Peach.src.worldgen;
+using Timeless_Peach.src.constructs;
 
 namespace Timeless_Peach.src.consoles {
     class WorldConsole : ScrollingConsole{
@@ -17,7 +18,7 @@ namespace Timeless_Peach.src.consoles {
 
         private World dungeon;
 
-        public WorldConsole(World world) : base(width, height, new Rectangle(0, 0, 65, 20)) {
+        public WorldConsole(World world) : base(100, 100, new Rectangle(0, 0, 65, 20)) {
             dungeon = world;
             Print(5, 5, "Hello World", Color.White);
         }
@@ -28,6 +29,10 @@ namespace Timeless_Peach.src.consoles {
             // levelChange += amount;
             // this.SetRenderCells();
 
+        }
+
+        public void CenterOnPlayer(PlayableConstruct player) {
+            this.CenterViewPortOnPoint(player.Position);
         }
 
         public override void Update(TimeSpan timeElapsed) {

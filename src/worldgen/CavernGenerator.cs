@@ -94,7 +94,7 @@ namespace Timeless_Peach.src.worldgen {
                
                 for(int x = 0; x < width; x++) {
                     for(int y = 0; y < height; y++) {
-                        twoLevel[x, y] = smoothedLevel[x, y];
+                        twoLevel[y, x] = smoothedLevel[x, y];
                     }
                 }
             }

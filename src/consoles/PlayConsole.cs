@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Timeless_Peach.src.consoles;
 using Timeless_Peach.src.constructs;
 using Timeless_Peach.src.worldgen;
+using SadConsole.Components;
 
 namespace Timeless_Peach.src.consoles {
     class PlayConsole : ContainerConsole {
@@ -41,10 +42,10 @@ namespace Timeless_Peach.src.consoles {
             worldConsole.MoveLevel(0);
 
             logConsole.Position = new Point(0, 20);
-            SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
+            //SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
 
             Children.Add(worldConsole);
-            worldConsole.Children.Add(skel);
+            //worldConsole.Children.Add(skel);
             Children.Add(logConsole);
 
         }
@@ -64,6 +65,7 @@ namespace Timeless_Peach.src.consoles {
 
         public void AddPlayer(PlayableConstruct player) {
             this.player = player;
+            player.Components.Add(new EntityViewSyncComponent());
             worldConsole.Children.Add(player);
             var infoConsole = new InfoConsole(this);
             infoConsole.Position = new Point(65, 0);
@@ -85,7 +87,8 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2))) {
 
                 if(worldConsole.GetGlyph(xPos, yPos +1) != (int)'#'){
-                    worldConsole.ShiftUp();
+                    player.MoveBy(new Point(0, 1));
+                    worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -102,7 +105,8 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad8))) {
 
                 if (worldConsole.GetGlyph(xPos, yPos - 1) != (int)'#') {
-                    worldConsole.ShiftDown();
+                    player.MoveBy(new Point(0, -1));
+                    worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -118,7 +122,8 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad4))) {
 
                 if (worldConsole.GetGlyph(xPos - 1, yPos) != (int)'#') {
-                    worldConsole.ShiftRight();
+                    player.MoveBy(new Point(-1, 0));
+                    worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -134,7 +139,8 @@ namespace Timeless_Peach.src.consoles {
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad6))) {
 
                 if (worldConsole.GetGlyph(xPos + 1, yPos) != (int)'#') {
-                    worldConsole.ShiftLeft();
+                    player.MoveBy(new Point(1, 0));
+                    worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
                     if (consoleY > 4) {
@@ -152,21 +158,25 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad1)) {
                 player.Position += new Point(-1, 1);
+                worldConsole.CenterOnPlayer(player);
                 turn++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad3)) {
                 player.Position += new Point(1, 1);
+                worldConsole.CenterOnPlayer(player);
                 turn++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad7)) {
                 player.Position += new Point(-1, -1);
+                worldConsole.CenterOnPlayer(player);
                 turn++;
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad9)) {
                 player.Position += new Point(1, -1);
+                worldConsole.CenterOnPlayer(player);
                 turn++;
             }
 
