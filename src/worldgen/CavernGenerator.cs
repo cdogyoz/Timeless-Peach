@@ -100,6 +100,8 @@ namespace Timeless_Peach.src.worldgen {
                 }
             }
 
+            twoLevel[25, 10] = new Tile(Color.White, Color.Red, (int)'<', false, "downstair");
+
             //twoLevel = Decorate(twoLevel);
 
             //Convert to 1D array

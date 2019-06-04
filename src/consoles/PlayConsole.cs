@@ -13,6 +13,7 @@ namespace Timeless_Peach.src.consoles {
         public PlayableConstruct player;
 
         private ConsoleManager conMan;
+        private int curLevel = 0;
         public int turn;
         public int lastTurn;
         public int consoleY;
@@ -32,9 +33,9 @@ namespace Timeless_Peach.src.consoles {
             worldConsole = new WorldConsole(new Cell[65 * 20]);
 
             //Add the consoles found in the play screen
-            level = new World(65, 20, worldConsole).tiles;
+            world = new World(65, 20, worldConsole);
 
-            worldConsole = new WorldConsole(level);      //World viewport
+            worldConsole = new WorldConsole(world.dungeon[0].Cells);      //World viewport
 
 
             logConsole.Position = new Point(0, 20);
@@ -56,7 +57,6 @@ namespace Timeless_Peach.src.consoles {
                 //Run enemies()
                 player.setStamina(player.maxStamina);
             }
-                
             
             base.Update(timeElapsed);
         }
@@ -75,6 +75,11 @@ namespace Timeless_Peach.src.consoles {
 
             int xPos = player.Position.X;
             int yPos = player.Position.Y;
+
+            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Y)) {
+                worldConsole.Clear();
+                worldConsole.SetSurface(world.dungeon[curLevel++].Cells, 65, 20);
+            }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down)
                 || (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.NumPad2))) {

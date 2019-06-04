@@ -8,16 +8,25 @@ using Timeless_Peach.src.consoles;
 
 namespace Timeless_Peach.src.worldgen {
     class World {
-        public Tile[] tiles;
+        public List<Level> dungeon;
         private int width;
         private int height;
 
         public World(int width, int height, WorldConsole world) {
-            tiles = new Tile[width * height];
+            dungeon = new List<Level>(); //Create a new dungeon with 5 total levels
             this.width = width;
             this.height = height;
 
-            tiles = new CavernGenerator(width, height, world).CreateLevel();
+            //Generate all floors of the dungeons
+            for(int i = 0; i < 5; i++) {
+
+                //Generate the first 5 floors as caverns
+                if(i <= 6) {
+                    dungeon.Add(new Level(LevelTypes.CAVERNS, world));
+                }
+
+            }
+
         }
     }
 }
