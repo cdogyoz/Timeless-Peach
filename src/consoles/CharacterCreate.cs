@@ -13,7 +13,7 @@ namespace Timeless_Peach.src.consoles {
 
         private ConsoleManager conMan;
         private int selectChoice = 0;
-        static public string currentRace = "You have not selected a race yet.";
+        static public string currentRace = "You choose Human.";
 
         public CharacterCreate(ConsoleManager conMan) : base(80, 25) {
             this.conMan = conMan;
@@ -28,7 +28,7 @@ namespace Timeless_Peach.src.consoles {
 
         private void DrawMenuOptions() {
             Print(28, 1, "CHARACTER CREATE", Color.White, Color.Black);
-            Print(28, 22, "Press enter to select, space to play", Color.Black, Color.PeachPuff);
+            Print(28, 22, "Press space to play", Color.Black, Color.PeachPuff);
             if (selectChoice == 0) {
                 Print(34, 8, "Human", Color.Red);
                 Print(34, 10, "Kimi", Color.White);
@@ -70,6 +70,23 @@ namespace Timeless_Peach.src.consoles {
                 else {
                     selectChoice = 0;
                 }
+
+                if (selectChoice == 0)
+                {
+                    currentRace = "You choose Human.";
+                }
+                if (selectChoice == 1)
+                {
+                    currentRace = "You choose Kimi.";
+                }
+                if (selectChoice == 2)
+                {
+                    currentRace = "You choose High Uvese.";
+                }
+                if (selectChoice == 3)
+                {
+                    currentRace = "You choose Bronk.";
+                }
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up)) {
@@ -79,20 +96,22 @@ namespace Timeless_Peach.src.consoles {
                 else {
                     selectChoice = 3;
                 }
-            }
 
-            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)) {
-                if (selectChoice == 0) {
-                    currentRace = "You chose Human.";
+                if (selectChoice == 0)
+                {
+                    currentRace = "You choose Human.";
                 }
-                if (selectChoice == 1) {
-                    currentRace = "You chose Kimi.";
+                if (selectChoice == 1)
+                {
+                    currentRace = "You choose Kimi.";
                 }
-                if (selectChoice == 2) {
-                    currentRace = "You chose High Uvese.";
+                if (selectChoice == 2)
+                {
+                    currentRace = "You choose High Uvese.";
                 }
-                if (selectChoice == 3) {
-                    currentRace = "You chose Bronk.";
+                if (selectChoice == 3)
+                {
+                    currentRace = "You choose Bronk.";
                 }
             }
 

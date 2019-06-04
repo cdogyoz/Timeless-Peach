@@ -33,7 +33,7 @@ namespace Timeless_Peach.src.constructs {
             return (divinity * 4);
         }
 
-        public int GetMana() {
+        public int getMana() {
             return mana;
         }
 
@@ -44,6 +44,11 @@ namespace Timeless_Peach.src.constructs {
         public int getStamina() {
 
             return stamina;
+        }
+
+        public int getDivinity()
+        {
+            return divinity;
         }
 
         public void setStamina(int stamina) {
