@@ -41,7 +41,7 @@ namespace Timeless_Peach.src.consoles {
             worldConsole = new WorldConsole(world);      //World viewport
             worldConsole.MoveLevel(0);
 
-            logConsole.Position = new Point(0, 35);
+            logConsole.Position = new Point(0, 34);
 
             Children.Add(worldConsole);
             Children.Add(logConsole);
@@ -91,7 +91,7 @@ namespace Timeless_Peach.src.consoles {
                     worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved down.", Color.Green, Color.Blue);
-                    if (consoleY > 4) {
+                    if (consoleY > 5) {
                         logConsole.ShiftUp();
                     }
                     else {
@@ -109,7 +109,7 @@ namespace Timeless_Peach.src.consoles {
                     worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved up.", Color.Green, Color.Blue);
-                    if (consoleY > 4) {
+                    if (consoleY > 5) {
                         logConsole.ShiftUp();
                     }
                     else {
@@ -126,7 +126,7 @@ namespace Timeless_Peach.src.consoles {
                     worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved left.", Color.Green, Color.Blue);
-                    if (consoleY > 4) {
+                    if (consoleY > 5) {
                         logConsole.ShiftUp();
                     }
                     else {
@@ -143,7 +143,7 @@ namespace Timeless_Peach.src.consoles {
                     worldConsole.CenterOnPlayer(player);
                     turn++;
                     logConsole.Print(0, consoleY, "You moved right.", Color.Green, Color.Blue);
-                    if (consoleY > 4) {
+                    if (consoleY > 5) {
                         logConsole.ShiftUp();
                     }
                     else {
