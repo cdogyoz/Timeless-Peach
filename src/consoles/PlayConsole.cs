@@ -78,7 +78,7 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Y)) {
                 worldConsole.Clear();
-                worldConsole.SetSurface(world.dungeon[curLevel++].Cells, 65, 20);
+                worldConsole.SetSurface(world.dungeon[++curLevel].Cells, worldConsole.Width, worldConsole.Height);
             }
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down)
