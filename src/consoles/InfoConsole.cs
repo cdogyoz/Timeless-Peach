@@ -12,7 +12,7 @@ namespace Timeless_Peach.src.consoles {
         public InfoConsole(PlayConsole playCon) : base(15, 20) {
             this.playCon = playCon;
 
-            Fill(Color.Orange, Color.Orange, ' ', null);
+            Fill(Color.DarkGray, Color.DarkGray, ' ', null);
             Print(1, 0, "INFO CONSOLE", Color.White);
             Print(0, 5, "Health: " + playCon.player.getHealth(), Color.Pink);
             Print(0, 6, "Mana: " + playCon.player.getMana(), Color.Blue);
