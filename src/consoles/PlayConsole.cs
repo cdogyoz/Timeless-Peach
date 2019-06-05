@@ -21,6 +21,8 @@ namespace Timeless_Peach.src.consoles {
         public ScrollingConsole logConsole;
         private WorldConsole worldConsole;
         private Console escapeOptionsConsole;
+        private int playerX = 20;
+        private int playerY = 20;
 
         private World world;
         private Cell[] level;
@@ -45,7 +47,6 @@ namespace Timeless_Peach.src.consoles {
 
             Children.Add(worldConsole);
             Children.Add(logConsole);
-
         }
 
         public override void Update(TimeSpan timeElapsed) {
@@ -67,6 +68,11 @@ namespace Timeless_Peach.src.consoles {
             SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
             worldConsole.Children.Add(skel);
             worldConsole.Children.Add(player);
+            while (worldConsole.GetGlyph(playerX, playerY) == (int)'#'){
+                playerX++;
+                playerY++;
+                player.Position = new Point(playerX, playerY);
+    }
             var infoConsole = new InfoConsole(this);
             infoConsole.Position = new Point(101, 0);
             Children.Add(infoConsole);
