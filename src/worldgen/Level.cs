@@ -7,6 +7,7 @@ using SadConsole;
 using Timeless_Peach.src.consoles;
 using Timeless_Peach.src.constructs;
 using SadConsole.Entities;
+using SadConsole.Components;
 using Microsoft.Xna.Framework;
 using GoRogue;
 
@@ -25,15 +26,16 @@ namespace Timeless_Peach.src.worldgen {
                 Cell[] map = new CavernGenerator(base.Width, base.Height, world).CreateLevel();
                 base.SetSurface(map, base.Width, base.Height);
 
+                Point monsterPosition;
                 //Add skeletons around the level 
-                for (int i = 0; i < 15; i++) {
+                for (int i = 0; i < 1; i++) {
                     Random r = new Random(i);
-                    int x = 10 + i;
-                    int y = 10 + i;
+                    monsterPosition = new Point(10, 10);
 
-                    SkeletonConstruct skel = new SkeletonConstruct(new Point(x, y));
-
-                    entities.Add(skel, new Point(x, y)); 
+                    SkeletonConstruct skel = new SkeletonConstruct();
+                    skel.Position = monsterPosition;
+                    skel.Components.Add(new EntityViewSyncComponent());
+                    entities.Add(skel, monsterPosition); 
                 }
             }
         }

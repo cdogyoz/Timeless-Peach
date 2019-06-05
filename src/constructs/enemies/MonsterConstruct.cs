@@ -12,7 +12,7 @@ namespace Timeless_Peach.src.constructs {
 
         protected Point playerPos;
 
-        public MonsterConstruct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph, position) {
+        public MonsterConstruct(Color foreground, Color background, int glyph) : base(foreground, background, glyph, new Point()) {
         }
 
         protected void FindPlayer() {

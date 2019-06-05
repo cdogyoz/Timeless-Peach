@@ -9,9 +9,8 @@ using Microsoft.Xna.Framework;
 namespace Timeless_Peach.src.constructs {
     class SkeletonConstruct : MonsterConstruct{
 
-        public SkeletonConstruct(Point position) : base(Color.White, Color.DeepPink, (int)'S', position) {
-            Position = position;
-            IsFocused = false;
+        public SkeletonConstruct() : base(Color.White, Color.DeepPink, (int)'s') {
+
         } 
 
     }
