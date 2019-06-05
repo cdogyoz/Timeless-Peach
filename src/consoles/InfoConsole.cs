@@ -20,6 +20,7 @@ namespace Timeless_Peach.src.consoles {
             if(playCon.lastTurn < playCon.turn)
                 Print(0, 4, "Turn: " + playCon.turn, Color.White);
 
+            //Print(0, 1, "Level: " + playCon.curLevel
             Print(0, 2, playCon.player.GetName(), Color.White, Color.Blue);
             Print(0, 5, "Health: " + playCon.player.getHealth(), Color.Pink);
             Print(0, 6, "Mana: " + playCon.player.getMana(), Color.Blue);

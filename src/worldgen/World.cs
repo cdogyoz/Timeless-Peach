@@ -28,7 +28,7 @@ namespace Timeless_Peach.src.worldgen {
 
                 //Generate the first 5 floors as caverns
                 if(i <= 6) {
-                    dungeon.Add(new Level(LevelTypes.CAVERNS, world));
+                    dungeon.Add(new Level(LevelTypes.CAVERNS, world, i));
                 }
 
             }

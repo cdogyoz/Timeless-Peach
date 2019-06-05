@@ -13,7 +13,7 @@ namespace Timeless_Peach.src.constructs {
         //Anything that is playable will inherit from this class
 
         public PlayableConstruct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph, position) {
-
+            IsVisible = true;
         }
 
     }

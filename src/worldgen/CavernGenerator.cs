@@ -82,7 +82,7 @@ namespace Timeless_Peach.src.worldgen {
                         }
 
                         //Check if walls are greater than or equal to 5
-                        if(walls >= 4) {
+                        if(walls >= 4) {                
                             smoothedLevel[x, y] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
 
                         } else {
@@ -94,12 +94,17 @@ namespace Timeless_Peach.src.worldgen {
                
                 for(int x = 0; x < width; x++) {
                     for(int y = 0; y < height; y++) {
-                        twoLevel[y, x] = smoothedLevel[x, y];
+                        twoLevel[x, y] = smoothedLevel[x, y];
                     }
                 }
             }
 
             twoLevel[25, 10] = new Tile(Color.White, Color.Red, (int)'<', false, "downstair");
+
+            //Create the boundaries
+            for(int x = 0; x < width; x++) {
+                //twoLevel
+            }
 
             //twoLevel = Decorate(twoLevel);
 

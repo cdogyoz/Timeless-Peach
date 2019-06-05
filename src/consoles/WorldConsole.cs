@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 
 using SadConsole;
+using SadConsole.Entities;
 using System;
 using Console = SadConsole.Console;
 using Timeless_Peach.src.worldgen;
@@ -35,10 +36,18 @@ namespace Timeless_Peach.src.consoles {
             this.CenterViewPortOnPoint(player.Position);
         }
 
-        public override void Update(TimeSpan timeElapsed) {
-            //this.Clear();
-            //D//raw(timeElapsed);
+        private void SyncMapEntities(World world) {
 
+            //remove all entities from console
+            Children.Clear();
+
+            foreach(Construct construct in world.dungeon[curLevel].entities.Items) {
+                this.Children.Add(construct);
+            }
+        }
+
+        public override void Update(TimeSpan timeElapsed) {
+            SyncMapEntities(dungeon);
             base.Update(timeElapsed);
         }
     }

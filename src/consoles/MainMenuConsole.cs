@@ -29,9 +29,9 @@ namespace Timeless_Peach.src.consoles {
         }
 
         private void DrawMenuOptions() {
-            Print(0, 0, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
-            Print(0, 2, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
-            Print(0, 1, title.Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
+            Print(0, 0, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Pink);
+            Print(0, 2, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Pink);
+            Print(0, 1, title.Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Pink);
             if (selectChoice == 0) {
                 Print(0, 18, "Play".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Red);
                 Print(0, 20, "Quit".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.White);

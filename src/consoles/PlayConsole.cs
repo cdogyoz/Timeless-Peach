@@ -14,7 +14,7 @@ namespace Timeless_Peach.src.consoles {
         public PlayableConstruct player;
 
         private ConsoleManager conMan;
-        private int curLevel = 1;
+        private int curLevel = 0;
         public int turn;
         public int lastTurn;
         public int consoleY;
@@ -42,6 +42,9 @@ namespace Timeless_Peach.src.consoles {
             worldConsole.MoveLevel(0);
 
             logConsole.Position = new Point(0, 37);
+            var infoConsole = new InfoConsole(this);
+            infoConsole.Position = new Point(101, 0);
+            Children.Add(infoConsole);
 
             Children.Add(worldConsole);
             Children.Add(logConsole);
@@ -61,14 +64,12 @@ namespace Timeless_Peach.src.consoles {
         }
 
         public void AddPlayer(PlayableConstruct player) {
-            this.player = player;
+            world.dungeon[curLevel].Add(player);
+            this.player = world.dungeon[curLevel].GetEntityAt<PlayableConstruct>(new Point(10, 10));
+            //this.player = player;
             player.Components.Add(new EntityViewSyncComponent());
-            SkeletonConstruct skel = new SkeletonConstruct(new Point(20, 10), this);
-            worldConsole.Children.Add(skel);
-            worldConsole.Children.Add(player);
-            var infoConsole = new InfoConsole(this);
-            infoConsole.Position = new Point(101, 0);
-            Children.Add(infoConsole);
+
+            //worldConsole.Children.Add(player);
             Global.CurrentScreen = this;
 
         }
