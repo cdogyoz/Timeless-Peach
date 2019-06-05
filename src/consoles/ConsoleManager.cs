@@ -9,9 +9,10 @@ using Timeless_Peach.src.constructs;
 namespace Timeless_Peach.src.consoles {
     class ConsoleManager : ContainerConsole {
 
-        public PlayConsole gameScreen; //The game screen
+        static public PlayConsole gameScreen; //The game screen
         public MainMenuConsole mainMenu;
         public CharacterCreate create;
+        public EscapeOptionsConsole escape;
 
         public ConsoleManager() {
             IsVisible = true;
@@ -19,6 +20,7 @@ namespace Timeless_Peach.src.consoles {
             mainMenu = new MainMenuConsole("Timeless Peach", this);
             gameScreen = new PlayConsole(this);
             create = new CharacterCreate(this);
+            escape = new EscapeOptionsConsole(this);
 
             Parent = SadConsole.Global.CurrentScreen;
             Children.Add(mainMenu);

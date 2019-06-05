@@ -27,15 +27,18 @@ namespace Timeless_Peach.src.consoles {
 
         private void DrawMenuOptions()
         {
-            Print(28, 1, "MENU", Color.White, Color.Black);
+            SadConsole.Global.CurrentScreen = conMan.escape;
+            Print(0, 0, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Purple);
+            Print(0, 2, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Purple);
+            Print(0, 1, "MENU".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.Purple);
 
             if (selectChoice == 0){
-                Print(34, 8, "Continue", Color.Red);
-                Print(34, 10, "Return to main menu", Color.White);
+                Print(0, 18, "Continue".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Red) ;
+                Print(0, 20, "Return to main menu".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.White);
             }
             else if (selectChoice == 1){
-                Print(34, 8, "Continue", Color.White);
-                Print(34, 10, "Return to main menu", Color.Red);
+                Print(0, 18, "Continue".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.White);
+                Print(0, 20, "Return to main menu".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Red);
             }
         }
 
@@ -50,10 +53,9 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)){
                 if (selectChoice == 0){
-                    SadConsole.Global.CurrentScreen = conMan.gameScreen;
                 }
                 else{
-                    SadConsole.Global.CurrentScreen = conMan.create;
+                    SadConsole.Global.CurrentScreen = conMan.mainMenu;
                 }
             }
         }

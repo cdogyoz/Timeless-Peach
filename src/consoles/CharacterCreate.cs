@@ -120,18 +120,22 @@ namespace Timeless_Peach.src.consoles {
                 if (selectChoice == 0) {
                     //name = EnterName();
                     conMan.CreateGame(new HumanConstruct("Charles",new Point(10, 10)));
+                    ConsoleManager.gameScreen = new PlayConsole(conMan);
                 }
                 if (selectChoice == 1) {
                     //name = EnterName();
                     conMan.CreateGame(new KimiConstruct(new Point(10, 10)));
+                    ConsoleManager.gameScreen = new PlayConsole(conMan);
                 }
                 if (selectChoice == 2) {
                     //name = EnterName();
                     conMan.CreateGame(new HighUveseConstruct(new Point(10, 10)));
+                    ConsoleManager.gameScreen = new PlayConsole(conMan);
                 }
                 if (selectChoice == 3) {
                     //name = EnterName();
                    conMan.CreateGame(new BronkConstruct(new Point(10, 10)));
+                    ConsoleManager.gameScreen = new PlayConsole(conMan);
                 }
             }
         }
