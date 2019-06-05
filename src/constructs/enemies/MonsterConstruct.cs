@@ -10,15 +10,13 @@ using SadConsole;
 namespace Timeless_Peach.src.constructs {
     class MonsterConstruct : Construct{
 
-        protected PlayConsole playCon;
         protected Point playerPos;
 
-        public MonsterConstruct(Color foreground, Color background, int glyph, Point position, PlayConsole playCon) : base(foreground, background, glyph, position) {
-            this.playCon = playCon;
+        public MonsterConstruct(Color foreground, Color background, int glyph, Point position) : base(foreground, background, glyph, position) {
         }
 
         protected void FindPlayer() {
-            playerPos = playCon.player.Position;
+
         }
     }
 }

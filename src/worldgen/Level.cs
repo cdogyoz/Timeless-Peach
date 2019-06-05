@@ -21,13 +21,20 @@ namespace Timeless_Peach.src.worldgen {
             this.floor = floor;
             entities = new GoRogue.MultiSpatialMap<Construct>();
 
-            if(floor == 0) {
-
-            }
-
             if (type == LevelTypes.CAVERNS) {
                 Cell[] map = new CavernGenerator(base.Width, base.Height, world).CreateLevel();
                 base.SetSurface(map, base.Width, base.Height);
+
+                //Add skeletons around the level 
+                for (int i = 0; i < 15; i++) {
+                    Random r = new Random(i);
+                    int x = 10 + i;
+                    int y = 10 + i;
+
+                    SkeletonConstruct skel = new SkeletonConstruct(new Point(x, y));
+
+                    entities.Add(skel, new Point(x, y)); 
+                }
             }
         }
 
