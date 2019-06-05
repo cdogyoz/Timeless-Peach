@@ -126,16 +126,19 @@ namespace Timeless_Peach.src.consoles {
                     //name = EnterName();
                     conMan.CreateGame(new KimiConstruct(new Point(10, 10)));
                     ConsoleManager.gameScreen = new PlayConsole(conMan);
+                    selectChoice = 0;
                 }
                 if (selectChoice == 2) {
                     //name = EnterName();
                     conMan.CreateGame(new HighUveseConstruct(new Point(10, 10)));
                     ConsoleManager.gameScreen = new PlayConsole(conMan);
+                    selectChoice = 0;
                 }
                 if (selectChoice == 3) {
                     //name = EnterName();
                    conMan.CreateGame(new BronkConstruct(new Point(10, 10)));
                     ConsoleManager.gameScreen = new PlayConsole(conMan);
+                    selectChoice = 0;
                 }
             }
         }

@@ -56,6 +56,7 @@ namespace Timeless_Peach.src.consoles {
                 }
                 else{
                     SadConsole.Global.CurrentScreen = conMan.mainMenu;
+                    selectChoice = 0;
                 }
             }
         }
