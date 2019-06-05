@@ -13,6 +13,7 @@ namespace Timeless_Peach.src.consoles {
         public MainMenuConsole mainMenu;
         public CharacterCreate create;
         public EscapeOptionsConsole escape;
+        public OptionsConsole options;
 
         public ConsoleManager() {
             IsVisible = true;
@@ -21,6 +22,7 @@ namespace Timeless_Peach.src.consoles {
             gameScreen = new PlayConsole(this);
             create = new CharacterCreate(this);
             escape = new EscapeOptionsConsole(this);
+            options = new OptionsConsole(this);
 
             Parent = SadConsole.Global.CurrentScreen;
             Children.Add(mainMenu);

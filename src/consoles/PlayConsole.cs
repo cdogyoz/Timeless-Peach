@@ -22,6 +22,7 @@ namespace Timeless_Peach.src.consoles {
         private WorldConsole worldConsole;
         private Console escapeOptionsConsole;
 
+
         private World world;
         private Cell[] level;
         public PlayConsole(ConsoleManager conMan) {
