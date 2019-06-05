@@ -29,16 +29,16 @@ namespace Timeless_Peach.src.consoles {
         }
 
         private void DrawMenuOptions() {
-
-            Print(0, 0, title.Align(HorizontalAlignment.Center, Width), Color.Black, Color.Green);
-
+            Print(0, 0, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
+            Print(0, 2, " ".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
+            Print(0, 1, title.Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Black, Color.PeachPuff);
             if (selectChoice == 0) {
-                Print(38, 10, "Play", Color.Red);
-                Print(38, 12, "Quit", Color.White);
+                Print(0, 18, "Play".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Red);
+                Print(0, 20, "Quit".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.White);
             }
             else if (selectChoice == 1) {
-                Print(38, 10, "Play", Color.White);
-                Print(38, 12, "Quit", Color.Red);
+                Print(0, 18, "Play".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.White);
+                Print(0, 20, "Quit".Align(HorizontalAlignment.Center, TimelessPeach.Width), Color.Red);
             }
         }
 
