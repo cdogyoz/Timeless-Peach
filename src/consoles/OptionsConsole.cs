@@ -67,7 +67,8 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)){
                 if (selectChoice == 0){
-                    
+                    //todo: fullscreen
+                    selectChoice = 1;
                 }
                 else if (selectChoice == 1){
                     SadConsole.Global.CurrentScreen = conMan.escape;
