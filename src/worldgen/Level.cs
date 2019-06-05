@@ -28,9 +28,9 @@ namespace Timeless_Peach.src.worldgen {
 
                 Point monsterPosition;
                 //Add skeletons around the level 
-                for (int i = 0; i < 1; i++) {
+                for (int i = 0; i < 15; i++) {
                     Random r = new Random(i);
-                    monsterPosition = new Point(10, 10);
+                    monsterPosition = new Point(r.Next(0, 100), r.Next(0, 100));
 
                     SkeletonConstruct skel = new SkeletonConstruct();
                     skel.Position = monsterPosition;
