@@ -53,6 +53,7 @@ namespace Timeless_Peach.src.consoles {
 
             if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)){
                 if (selectChoice == 0){
+                    SadConsole.Global.CurrentScreen = conMan.getGameScreen();
                 }
                 else{
                     SadConsole.Global.CurrentScreen = conMan.mainMenu;
