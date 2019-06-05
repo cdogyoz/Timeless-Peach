@@ -54,10 +54,8 @@ namespace Timeless_Peach.src.consoles {
                 if (selectChoice == 0) {
                     SadConsole.Global.CurrentScreen = conMan.create;
                 }
-            }
-
-            if (SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space) || SadConsole.Global.KeyboardState.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Enter)) {
-                if (selectChoice == 1) {
+                else if (selectChoice == 1)
+                {
                     System.Environment.Exit(1);
                 }
             }

@@ -33,7 +33,7 @@ namespace Timeless_Peach.src.worldgen {
 
                     SkeletonConstruct skel = new SkeletonConstruct(new Point(x, y));
 
-                    entities.Add(skel, new Point(x, y)); 
+                    entities.Add(skel, new Point(10, 10)); 
                 }
             }
         }
