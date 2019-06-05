@@ -31,7 +31,7 @@ namespace Timeless_Peach.src.worldgen {
                 for(int y = 0; y < height; y++) {
                     int randNum = r.Next(0, 125);
                     
-                    if(randNum <= 30) {
+                    if(randNum <= 40) {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
                     } else {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'-', false, "ground");
@@ -103,7 +103,13 @@ namespace Timeless_Peach.src.worldgen {
 
             //Create the boundaries
             for(int x = 0; x < width; x++) {
-                //twoLevel
+                twoLevel[x, 0] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
+                twoLevel[x, height - 1] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
+            }
+
+            for(int y = 0; y < height; y++) {
+                twoLevel[0, y] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
+                twoLevel[width - 1, y] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
             }
 
             //twoLevel = Decorate(twoLevel);
