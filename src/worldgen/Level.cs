@@ -49,6 +49,10 @@ namespace Timeless_Peach.src.worldgen {
         }
 
         //Returns FOV object from the players current postion
+        public FOV GetFOV(Point playerPos) {
+            fov.Calculate(playerPos, 3);
+            return fov;
+        }
 
         //If a certain type of object exists at a position in the Multi spatial map, get that object
         public T GetEntityAt<T>(Point position) where T : Construct {
