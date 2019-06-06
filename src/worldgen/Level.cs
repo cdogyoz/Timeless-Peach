@@ -10,20 +10,28 @@ using SadConsole.Entities;
 using SadConsole.Components;
 using Microsoft.Xna.Framework;
 using GoRogue;
+using GoRogue.MapGeneration;
+using GoRogue.MapViews;
+using Troschuetz.Random;
+using Troschuetz.Random.Generators;
 
 namespace Timeless_Peach.src.worldgen {
     class Level : CellSurface {
 
         public GoRogue.MultiSpatialMap<Construct> entities; //A list that allows multiple construct to be stored at the same position
+        public ArrayMap<bool> fovMap;
         public static GoRogue.IDGenerator IDGenerator = new GoRogue.IDGenerator();
+        public FOV fov;
         private int floor;
 
         public Level(LevelTypes type, WorldConsole world, int floor) : base(100, 100) {
             this.floor = floor;
+            fovMap = new ArrayMap<bool>(Width, Height);
+            fov = new FOV(fovMap);
             entities = new GoRogue.MultiSpatialMap<Construct>();
 
             if (type == LevelTypes.CAVERNS) {
-                Cell[] map = new CavernGenerator(base.Width, base.Height, world).CreateLevel();
+                Cell[] map = new CavernGenerator(base.Width, base.Height, world, this).CreateLevel();
                 base.SetSurface(map, base.Width, base.Height);
 
                 Point monsterPosition;
@@ -39,6 +47,8 @@ namespace Timeless_Peach.src.worldgen {
                 }
             }
         }
+
+        //Returns FOV object from the players current postion
 
         //If a certain type of object exists at a position in the Multi spatial map, get that object
         public T GetEntityAt<T>(Point position) where T : Construct {

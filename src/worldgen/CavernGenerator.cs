@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using SadConsole;
 using Timeless_Peach.src.consoles;
+using GoRogue;
+using GoRogue.MapGeneration;
+using GoRogue.MapViews;
+using Troschuetz.Random;
+using Troschuetz.Random.Generators;
 
 namespace Timeless_Peach.src.worldgen {
     class CavernGenerator {
@@ -13,10 +18,14 @@ namespace Timeless_Peach.src.worldgen {
         private int width = 100;
         private int height = 100;
         private int seed;
+        ArrayMap<Tile> arrayMap;
         private WorldConsole world;
+        private Level level;
 
-        public CavernGenerator(int width, int height, WorldConsole world) {
-            
+        //TODO: Turn all the generation stuff into an ArrayMap
+
+        public CavernGenerator(int width, int height, WorldConsole world, Level level) {
+            this.level = level;
             this.world = world;
             seed = DateTime.Now.Millisecond;
         }
@@ -31,7 +40,7 @@ namespace Timeless_Peach.src.worldgen {
                 for(int y = 0; y < height; y++) {
                     int randNum = r.Next(0, 125);
                     
-                    if(randNum <= 40) {
+                    if(randNum <= 33) {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'#', true, "wall");
                     } else {
                         twoLevel[x, y] = new Tile(Color.White, Color.Black, (int)'-', false, "ground");
@@ -84,10 +93,11 @@ namespace Timeless_Peach.src.worldgen {
                         //Check if walls are greater than or equal to 5
                         if(walls >= 4) {                
                             smoothedLevel[x, y] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
+                            level.fovMap[x, y] = false;
 
                         } else {
                             smoothedLevel[x, y] = new Tile(Color.Gray, Color.Black, (int)'-', false, "ground");
-                          
+                            level.fovMap[x, y] = true;
                         }
                     }
                 }
@@ -105,6 +115,8 @@ namespace Timeless_Peach.src.worldgen {
             for(int x = 0; x < width; x++) {
                 twoLevel[x, 0] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
                 twoLevel[x, height - 1] = new Tile(Color.SaddleBrown, Color.Black, (int)'#', true, "wall");
+                level.fovMap[x, 0] = false;
+                level.fovMap[x, height - 1] = false;
             }
 
             for(int y = 0; y < height; y++) {
@@ -115,14 +127,13 @@ namespace Timeless_Peach.src.worldgen {
             //twoLevel = Decorate(twoLevel);
 
             //Convert to 1D array
-            int i = 0;
+            arrayMap = new ArrayMap<Tile>(width, height);
             for(int x = 0; x < width; x++) {
                 for(int y = 0; y < height; y++) {
-                    oneLevel[i] = twoLevel[x, y];
-                    i++;
+                    arrayMap[x, y] = twoLevel[x, y];
                 }
             }
-
+            oneLevel = arrayMap;
             return oneLevel;
 
         }
